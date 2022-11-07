@@ -26,7 +26,6 @@ export default {
       },
     },
   },
-  argTypes: {},
 } as Meta<TextInputInputProps>;
 
 export const Default: StoryObj<textInputRootProps> = {};
