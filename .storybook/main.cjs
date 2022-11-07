@@ -12,10 +12,11 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
-  vitefinal: (config, { configtype }) => {
-    if (configtype === "production") {
-      config.base = "/IgniteLabDS/";
+  viteFinal: (config, { configType }) => {
+    if (configType === 'PRODUCTION') {
+      config.base = '/IgniteLabDS/'
     }
-    return config;
-  },
-};
+
+    return config
+  }
+}
