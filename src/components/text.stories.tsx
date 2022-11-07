@@ -1,35 +1,41 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { text, TextProps } from "./text";
+import { Meta, StoryObj } from "@storybook/react";
+import { Text, TextProps } from "./text";
+
 export default {
-  title: "components/text",
-  component: text,
+  title: "Components/Text",
+  component: Text,
   args: {
-    children: "loren ipsum",
+    children: "Lorem ipsum.",
+    size: "md",
   },
   argTypes: {
     size: {
-      control: "inline-radio",
       options: ["sm", "md", "lg"],
+      control: {
+        type: "inline-radio",
+      },
     },
   },
-} as ComponentMeta<TextProps>;
+} as Meta<TextProps>;
 
-export const Default: ComponentStory<TextProps> = {};
-export const small: ComponentStory<TextProps> = {
+export const Default: StoryObj<TextProps> = {};
+
+export const Small: StoryObj<TextProps> = {
   args: {
     size: "sm",
   },
 };
-export const large: ComponentStory<TextProps> = {
+
+export const Large: StoryObj<TextProps> = {
   args: {
     size: "lg",
   },
 };
 
-export const customComponent: ComponentStory<TextProps> = {
+export const CustomComponent: StoryObj<TextProps> = {
   args: {
-    aschild: true,
-    children: <p>testin with p tag</p>,
+    asChild: true,
+    children: <p>Text with P tag</p>,
   },
   argTypes: {
     children: {
@@ -37,9 +43,7 @@ export const customComponent: ComponentStory<TextProps> = {
         disable: true,
       },
     },
-  },
-  aschild: {
-    children: {
+    asChild: {
       table: {
         disable: true,
       },
