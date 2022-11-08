@@ -1,8 +1,9 @@
-import { Meta, StoryObj } from "@storybook/react";
-import { Checkbox, CheckboxProps } from "./checkbox";
-import { Text } from "./text";
+import { Meta, StoryObj } from '@storybook/react'
+import { Checkbox, CheckboxProps } from './checkbox'
+import { Text } from './text'
+
 export default {
-  title: "Components/Checkbox",
+  title: 'Components/Checkbox',
   component: Checkbox,
   args: {},
   argTypes: {},
@@ -13,9 +14,9 @@ export default {
           {Story()}
           <Text size="sm">Lembrar-me de mim por 30 dias</Text>
         </div>
-      );
-    },
+      )
+    }
   ],
-} as Meta<CheckboxProps>;
+} as Meta<CheckboxProps>
 
-export const Default: StoryObj<CheckboxProps> = {};
+export const Default: StoryObj<CheckboxProps> = {}

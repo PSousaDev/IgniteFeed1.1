@@ -1,7 +1,7 @@
 import { Envelope, Lock } from "phosphor-react";
 import { Button } from "./components/button";
 import { Checkbox } from "./components/checkbox";
-import { Headin } from "./components/heading";
+import { Heading } from "./components/heading";
 import { Text } from "./components/text";
 import { TextInput } from "./components/textInput";
 import { Logo } from "./Logo";
@@ -14,9 +14,9 @@ export function App() {
       <header className="flex flex-col items-center">
         <Logo />
 
-        <Headin size="lg" className="mt-4">
+        <Heading size="lg" className="mt-4">
           Ignite Lab
-        </Headin>
+        </Heading>
 
         <Text size="lg" className="text-gray-400 mt-1">
           Faça login e comece a usar!
@@ -26,32 +26,32 @@ export function App() {
       <form className="flex flex-col gap-4 items-stretch w-full max-w-sm mt-10">
         <label htmlFor="email" className="flex flex-col gap-3">
           <Text className="font-semibold">Endereço de e-mail</Text>
-          <TextInput.root>
-            <TextInput.icon>
+          <TextInput.Root>
+            <TextInput.Icon>
               <Envelope />
-            </TextInput.icon>
+            </TextInput.Icon>
 
-            <TextInput.input
+            <TextInput.Input
               type="email"
               id="email"
               placeholder="Digite seu e-mail"
             />
-          </TextInput.root>
+          </TextInput.Root>
         </label>
 
         <label htmlFor="password" className="flex flex-col gap-3">
-          <Text classname="font-semibold">Sua senha</Text>
-          <TextInput.root>
-            <TextInput.icon>
+          <Text className="font-semibold">Sua senha</Text>
+          <TextInput.Root>
+            <TextInput.Icon>
               <Lock />
-            </TextInput.icon>
+            </TextInput.Icon>
 
-            <TextInput.input
+            <TextInput.Input
               type="password"
               id="password"
               placeholder="******"
             />
-          </TextInput.root>
+          </TextInput.Root>
         </label>
 
         <label htmlFor="remember" className="flex items-center gap-2">

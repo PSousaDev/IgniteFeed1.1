@@ -1,29 +1,34 @@
-import { Slot } from "@radix-ui/react-slot";
 import { InputHTMLAttributes, ReactNode } from "react";
-// parte da div superior do input
-export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {}
-export interface textInputRootProps {
+import { Slot } from "@radix-ui/react-slot";
+
+export interface TextInputRootProps {
   children: ReactNode;
 }
-export function textInputRoot(props: TextInputProps) {
+
+function TextInputRoot(props: TextInputRootProps) {
   return (
-    <div className=" flex intens-center gap-3 px-4 py-3 rounded bg-gray-800 w-full focus-within:ring-2 ring-cyan-300 ">
+    <div className="flex items-center gap-3 h-12 py-4 px-3 rounded bg-gray-800 w-full focus-within:ring-2 ring-cyan-300">
       {props.children}
     </div>
   );
 }
-// adicao do icone do input
-export interface TextInputIconprops {
+
+TextInputRoot.displayName = "TextInput.Root";
+
+export interface TextInputIconProps {
   children: ReactNode;
 }
-function textInputIcon(props: TextInputIconprops) {
+
+function TextInputIcon(props: TextInputIconProps) {
   return <Slot className="w-6 h-6 text-gray-400">{props.children}</Slot>;
 }
-textInputIcon.displayName = "TextInputIcon";
-// parte do input fragmentada
+
+TextInputIcon.displayName = "TextInput.Icon";
+
 export interface TextInputInputProps
   extends InputHTMLAttributes<HTMLInputElement> {}
-function TextInputIput(props: TextInputInputProps) {
+
+function TextInputInput(props: TextInputInputProps) {
   return (
     <input
       className="bg-transparent flex-1 text-gray-100 text-xs placeholder:text-gray-400 outline-none"
@@ -31,9 +36,11 @@ function TextInputIput(props: TextInputInputProps) {
     />
   );
 }
-// exportacao geral dos conponentes do input
+
+TextInputInput.displayName = "TextInput.Input";
+
 export const TextInput = {
-  root: textInputRoot,
-  input: TextInputIput,
-  icon: textInputIcon,
+  Root: TextInputRoot,
+  Input: TextInputInput,
+  Icon: TextInputIcon,
 };

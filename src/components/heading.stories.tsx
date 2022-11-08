@@ -1,46 +1,54 @@
-import { StoryObj, Meta } from "@storybook/react";
-import { Headin, Headingprops } from "./heading";
+import { Meta, StoryObj } from '@storybook/react'
+import { Heading, HeadingProps } from './heading'
+
 export default {
-  title: "components/heading",
-  component: Headin,
+  title: 'Components/Heading',
+  component: Heading,
   args: {
-    children: "loren ipsum",
+    children: 'Lorem ipsum.',
+    size: 'md',
   },
   argTypes: {
     size: {
-      control: "inline-radio",
-      options: ["sm", "md", "lg"],
-    },
-  },
-} as Meta<Headingprops>;
+      options: ['sm', 'md', 'lg'],
+      control: {
+        type: 'inline-radio'
+      }
+    }
+  }
+} as Meta<HeadingProps>
 
-export const Default: StoryObj<Headingprops> = {};
-export const small: StoryObj<Headingprops> = {
-  args: {
-    size: "sm",
-  },
-};
-export const large: StoryObj<Headingprops> = {
-  args: {
-    size: "lg",
-  },
-};
+export const Default: StoryObj<HeadingProps> = {}
 
-export const CustomComponent: StoryObj<Headingprops> = {
+export const Small: StoryObj<HeadingProps> = {
+  args: {
+    size: 'sm'
+  }
+}
+
+export const Large: StoryObj<HeadingProps> = {
+  args: {
+    size: 'lg'
+  }
+}
+
+export const CustomComponent: StoryObj<HeadingProps> = {
   args: {
     asChild: true,
-    children: <h1>Heading with H1</h1>,
+    children: (
+      <h1>Heading with H1</h1>
+    )
   },
   argTypes: {
     children: {
       table: {
         disable: true,
-      },
+      }
     },
     asChild: {
       table: {
         disable: true,
-      },
-    },
-  },
-};
+      }
+    }
+  }
+}
