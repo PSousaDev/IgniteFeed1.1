@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryObj, Meta } from "@storybook/react";
 import { Headin, Headingprops } from "./heading";
 export default {
   title: "components/heading",
@@ -12,24 +12,24 @@ export default {
       options: ["sm", "md", "lg"],
     },
   },
-} as ComponentMeta<Headingprops>;
+} as Meta<Headingprops>;
 
-export const Default: ComponentStory<Headingprops> = {};
-export const small: ComponentStory<Headingprops> = {
+export const Default: StoryObj<Headingprops> = {};
+export const small: StoryObj<Headingprops> = {
   args: {
     size: "sm",
   },
 };
-export const large: ComponentStory<Headingprops> = {
+export const large: StoryObj<Headingprops> = {
   args: {
     size: "lg",
   },
 };
 
-export const customComponent: ComponentStory<Headingprops> = {
+export const CustomComponent: StoryObj<Headingprops> = {
   args: {
-    aschild: true,
-    children: <h1>testin with h1</h1>,
+    asChild: true,
+    children: <h1>Heading with H1</h1>,
   },
   argTypes: {
     children: {
@@ -37,9 +37,7 @@ export const customComponent: ComponentStory<Headingprops> = {
         disable: true,
       },
     },
-  },
-  aschild: {
-    children: {
+    asChild: {
       table: {
         disable: true,
       },

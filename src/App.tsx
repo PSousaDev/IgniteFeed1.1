@@ -40,7 +40,7 @@ export function App() {
         </label>
 
         <label htmlFor="password" className="flex flex-col gap-3">
-          <Text clas="font-semibold">Sua senha</Text>
+          <Text classname="font-semibold">Sua senha</Text>
           <TextInput.root>
             <TextInput.icon>
               <Lock />
